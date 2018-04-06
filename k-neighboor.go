@@ -31,5 +31,23 @@ func main(){
         }
         slice=append(slice,one)
     }
-    fmt.Print(slice)
+    min := 99999
+    from := 1
+    to := 1
+    for i:=0;i<n;i++ {
+        for j:=i+1;j<n;j++ {
+            tot:=0
+            for k:=0;k<4;k++ {
+                tot+=(slice[i].star[kind[k]]-slice[j].star[kind[k]])*(slice[i].star[kind[k]]-slice[j].star[kind[k]])
+            }
+            tot+=((slice[i].age-slice[j].age)*(slice[i].age-slice[j].age))
+            fmt.Println(tot,i,j)
+            if tot<min {
+                min=tot
+                from = i
+                to= j
+            }
+        }
+    }
+    fmt.Println("%s and %s will be the good frined!",slice[from].name,slice[to].name)
 }
