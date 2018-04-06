@@ -41,7 +41,7 @@ func main(){
                 tot+=(slice[i].star[kind[k]]-slice[j].star[kind[k]])*(slice[i].star[kind[k]]-slice[j].star[kind[k]])
             }
             tot+=((slice[i].age-slice[j].age)*(slice[i].age-slice[j].age))
-            fmt.Println(tot,i,j)
+//            fmt.Println(tot,i,j)
             if tot<min {
                 min=tot
                 from = i
