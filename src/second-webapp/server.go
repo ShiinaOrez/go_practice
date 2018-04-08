@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+//    "golang.org/x/net/http2"
     "net/http"
 )
 
@@ -24,6 +25,8 @@ func main(){
     http.HandleFunc("/",index)
     http.HandleFunc("/hello/",hello)
     http.HandleFunc("/world/",world)
-    
-    server.ListenAndServe()
+
+//    http2.ConfigureServer(&server,&http2.Server{})
+
+    server.ListenAndServe(/*"cert.pem","key.pem"*/)
 }
